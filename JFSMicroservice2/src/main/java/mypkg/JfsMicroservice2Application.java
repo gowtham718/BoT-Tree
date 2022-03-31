@@ -1,6 +1,7 @@
 package mypkg;
 
 import org.springframework.boot.SpringApplication;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,12 +11,13 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 @SpringBootApplication
+
 @RestController
 @EnableHystrix
-public class JfsMicroservice1Application {
+public class JfsMicroservice2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JfsMicroservice1Application.class, args);
+		SpringApplication.run(JfsMicroservice2Application.class, args);
 	}
 	@RequestMapping(value="/")
 	@HystrixCommand(fallbackMethod="fallback_hello",commandProperties= {
@@ -28,6 +30,7 @@ public class JfsMicroservice1Application {
 	}
 	private String fallback_hello()
 	{
-		return"Request fails.It takes longer time than usual";
+		return"It takes longer time than usual";
 	}
+
 }

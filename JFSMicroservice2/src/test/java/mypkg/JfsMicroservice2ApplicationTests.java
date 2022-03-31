@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JfsMicroservice1ApplicationTests {
+class JfsMicroservice2ApplicationTests {
 
 	@Test
 	void contextLoads() {
